@@ -41,11 +41,32 @@
                 <input type="text" id="brand" />
               </div>
               <img src="./src/assets/car.png" alt="car" />
+              <button onclick="send()" type="submit">Search</button>
             </div>
           </div>
         </div>
       </div>
     </main>
     <footer></footer>
+    <script>
+      function send() {
+        var body = {};
+        body["year"] = document.getElementById("year").value;
+        body["country"] = document.getElementById("country").value;
+        body["type"] = document.getElementById("type").value;
+        body["brand"] = document.getElementById("brand").value;
+        body["mileage"] = document.getElementById("mileage").value;
+        fetch("url", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+          },
+          body: JSON.stringify(body)
+        })
+          .then(res => res.json())
+          .then(data => console.log(data))
+          .catch(err => console.log(err));
+      }
+    </script>
   </body>
 </html>

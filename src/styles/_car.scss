@@ -30,6 +30,12 @@
     justify-content: center;
     .car__details-car {
       position: relative;
+      display: flex;
+      flex-direction: column;
+      button {
+        margin: 100px 0;
+        width: 100%;
+      }
     }
   }
 }

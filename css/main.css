@@ -32,7 +32,12 @@
   display: flex;
   justify-content: center; }
   .car__details .car__wrapper .car__details-car {
-    position: relative; }
+    position: relative;
+    display: flex;
+    flex-direction: column; }
+    .car__details .car__wrapper .car__details-car button {
+      margin: 100px 0;
+      width: 100%; }
 
 header {
   height: 50px;
