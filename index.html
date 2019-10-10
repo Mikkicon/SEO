@@ -8,7 +8,16 @@
     <title>Document</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <ul>
+        <li><a href="index.html">Main</a></li>
+        <li><a href="used.html">Used</a></li>
+        <li><a href="new.html">New</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="buying_used.html">Buying used car</a></li>
+        <li><a href="in_process.html">In process</a></li>
+      </ul>
+    </header>
     <main>
       <div class="car__details">
         <div class="car__details-unlinked">
@@ -23,6 +32,22 @@
           <div class="label__input">
             <label for="type">Type</label>
             <input type="text" id="type" />
+          </div>
+          <div class="label__input">
+            <label for="color">Color</label>
+            <input type="text" id="color" />
+          </div>
+          <div class="label__input">
+            <label for="engine_volume">Engine volume</label>
+            <input type="text" id="engine_volume" />
+          </div>
+          <div class="label__input">
+            <label for="fuel_type">Fuel Type</label>
+            <input type="text" id="fuel_type" />
+          </div>
+          <div class="label__input">
+            <label for="transmission">Transmission</label>
+            <input type="text" id="transmission" />
           </div>
         </div>
         <hr />
@@ -48,25 +73,6 @@
       </div>
     </main>
     <footer></footer>
-    <script>
-      function send() {
-        var body = {};
-        body["year"] = document.getElementById("year").value;
-        body["country"] = document.getElementById("country").value;
-        body["type"] = document.getElementById("type").value;
-        body["brand"] = document.getElementById("brand").value;
-        body["mileage"] = document.getElementById("mileage").value;
-        fetch("url", {
-          method: "POST",
-          headers: {
-            "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-          },
-          body: JSON.stringify(body)
-        })
-          .then(res => res.json())
-          .then(data => console.log(data))
-          .catch(err => console.log(err));
-      }
-    </script>
+    <script src="./scripts/main.js"></script>
   </body>
 </html>
